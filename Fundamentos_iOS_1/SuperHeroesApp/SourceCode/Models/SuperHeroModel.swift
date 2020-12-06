@@ -4,6 +4,9 @@
 //
 //  Created by José Sancho on 6/12/20.
 //
+// To parse the JSON, add this file to your project and do:
+//
+//   let superHero = try? newJSONDecoder().decode(SuperHero.self, from: jsonData)
 
 import Foundation
 
