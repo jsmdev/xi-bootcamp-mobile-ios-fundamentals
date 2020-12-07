@@ -7,25 +7,40 @@
 
 import UIKit
 
-class SuperHeroesTabBarController: UITabBarController, UITabBarControllerDelegate {
-    var superHeroes: SuperHeroes {
-        return SuperHeroRepository.shared.superHeroes
-    }
+private enum TabBarIndex: Int {
+    case dc, marvel
+}
 
+class SuperHeroesTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
+        delegate = self
+        navigationController?.isNavigationBarHidden = false
+        if let selectedVC = selectedViewController {
+            configure(selectedVC, with: TabBarIndex.dc.hashValue)
+        }
     }
 
-    // UITabBarDelegate
-    override func tabBar(_ tabBar: UITabBar,
-                         didSelect item: UITabBarItem) {
-        print("Selected item")
+    private func configure(_ viewController: UIViewController,
+                           with publisher: Int) {
+        if let superHeroesVC = viewController as? SuperHeroesViewController {
+            switch publisher {
+                case TabBarIndex.dc.rawValue:
+                    superHeroesVC.publisher = .dc
+                    print("DC Comics pressed")
+                case TabBarIndex.marvel.rawValue:
+                    superHeroesVC.publisher = .marvel
+                    print("MARVEL Comics pressed")
+                default:
+                    break
+            }
+        }
     }
+}
 
-    // UITabBarControllerDelegate
+extension SuperHeroesTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
-        print("Selected view controller")
+        configure(viewController, with: tabBarController.selectedIndex)
     }
 }
