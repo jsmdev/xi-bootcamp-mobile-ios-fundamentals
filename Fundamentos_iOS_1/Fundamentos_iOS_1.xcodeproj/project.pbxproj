@@ -16,6 +16,7 @@
 		900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C6365257D5D97005841F4 /* SuperHeroModel.swift */; };
 		900C637E257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */; };
 		900C6382257D74F6005841F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900C6381257D74F6005841F4 /* Assets.xcassets */; };
+		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		900C6365257D5D97005841F4 /* SuperHeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroModel.swift; sourceTree = "<group>"; };
 		900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpaper-superheroes-marvel&dc.jpg"; sourceTree = "<group>"; };
 		900C6381257D74F6005841F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90A239EC257E0486000DB167 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				900C6365257D5D97005841F4 /* SuperHeroModel.swift */,
+				90A239EC257E0486000DB167 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A239ED257E0486000DB167 /* Constants.swift in Sources */,
 				900C6352257D5C1F005841F4 /* SplashViewController.swift in Sources */,
 				900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */,
 				900C634E257D5C1F005841F4 /* AppDelegate.swift in Sources */,
