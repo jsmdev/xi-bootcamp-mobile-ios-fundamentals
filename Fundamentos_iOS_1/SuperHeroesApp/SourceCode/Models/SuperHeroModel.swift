@@ -70,4 +70,10 @@ struct Work: Codable {
     let occupation, base: String
 }
 
+// MARK: - Publisher
+enum Publisher: String {
+    case dc = "DC Comics"
+    case marvel = "Marvel Comics"
+}
+
 typealias SuperHeroes = [SuperHeroElement]

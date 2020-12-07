@@ -20,8 +20,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zzM-bE-g7J" kind="relationship" relationship="viewControllers" id="McN-gn-iL4"/>
-                        <segue destination="zzM-bE-g7J" kind="relationship" relationship="viewControllers" id="pf8-Zl-5Gt"/>
+                        <segue destination="zzM-bE-g7J" kind="relationship" relationship="viewControllers" id="OA3-6g-ii6"/>
+                        <segue destination="gPR-Rq-0Rg" kind="relationship" relationship="viewControllers" id="09K-UO-hOX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIE-1k-v3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -31,24 +31,70 @@
         <!--Item-->
         <scene sceneID="pAt-tk-C2k">
             <objects>
-                <viewController storyboardIdentifier="SuperHeroesViewController" id="zzM-bE-g7J" customClass="SuperHeroesViewController" customModule="Fundamentos_iOS_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DCSuperHeroesViewController" id="zzM-bE-g7J" customClass="DCSuperHeroesViewController" customModule="Fundamentos_iOS_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GEP-yw-vbq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u9T-wT-Orr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="i0H-WX-Gds"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="u9T-wT-Orr" firstAttribute="leading" secondItem="i0H-WX-Gds" secondAttribute="leading" id="607-eQ-jpf"/>
+                            <constraint firstItem="i0H-WX-Gds" firstAttribute="trailing" secondItem="u9T-wT-Orr" secondAttribute="trailing" id="GcS-Qh-SkY"/>
+                            <constraint firstItem="u9T-wT-Orr" firstAttribute="top" secondItem="i0H-WX-Gds" secondAttribute="top" id="eIo-yt-rhB"/>
+                            <constraint firstItem="i0H-WX-Gds" firstAttribute="bottom" secondItem="u9T-wT-Orr" secondAttribute="bottom" id="eqU-yo-pOQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="aPZ-fh-rs8"/>
+                    <connections>
+                        <outlet property="tableView" destination="u9T-wT-Orr" id="yiK-So-kSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9N-7G-QAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="-571"/>
+            <point key="canvasLocation" x="-29" y="-942"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ueH-F1-0Uz">
+            <objects>
+                <viewController storyboardIdentifier="MarvelSuperHeroesViewController" id="gPR-Rq-0Rg" customClass="MarvelSuperHeroesViewController" customModule="Fundamentos_iOS_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3u0-wR-TBG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nl-vb-nmk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oRL-R2-QNr"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="0nl-vb-nmk" firstAttribute="top" secondItem="oRL-R2-QNr" secondAttribute="top" id="DAc-5i-M4K"/>
+                            <constraint firstItem="oRL-R2-QNr" firstAttribute="trailing" secondItem="0nl-vb-nmk" secondAttribute="trailing" id="IB5-Yr-PpU"/>
+                            <constraint firstItem="0nl-vb-nmk" firstAttribute="leading" secondItem="oRL-R2-QNr" secondAttribute="leading" id="VAI-gC-Bkf"/>
+                            <constraint firstItem="oRL-R2-QNr" firstAttribute="bottom" secondItem="0nl-vb-nmk" secondAttribute="bottom" id="ss7-zv-fFf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="BsT-2g-4hW"/>
+                    <connections>
+                        <outlet property="tableView" destination="0nl-vb-nmk" id="OJn-P7-H37"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fB-aL-9Z3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="-222"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="McN-gn-iL4"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

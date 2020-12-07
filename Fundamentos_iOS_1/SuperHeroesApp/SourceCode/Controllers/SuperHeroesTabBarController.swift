@@ -7,40 +7,38 @@
 
 import UIKit
 
-private enum TabBarIndex: Int {
-    case dc, marvel
-}
+//private enum TabBarIndex: Int {
+//    case dc, marvel
+//}
 
 class SuperHeroesTabBarController: UITabBarController {
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
         navigationController?.isNavigationBarHidden = false
-        if let selectedVC = selectedViewController {
-            configure(selectedVC, with: TabBarIndex.dc.hashValue)
-        }
+//        if let selectedVC = selectedViewController {
+//            configure(selectedVC, with: TabBarIndex.dc.hashValue)
+//        }
     }
 
-    private func configure(_ viewController: UIViewController,
-                           with publisher: Int) {
-        if let superHeroesVC = viewController as? SuperHeroesViewController {
-            switch publisher {
-                case TabBarIndex.dc.rawValue:
-                    superHeroesVC.publisher = .dc
-                case TabBarIndex.marvel.rawValue:
-                    superHeroesVC.publisher = .marvel
-                default:
-                    break
-            }
-        }
-    }
+//    private func configure(_ viewController: UIViewController,
+//                           with publisher: Int) {
+//        if let superHeroesVC = viewController as? DCSuperHeroesViewController {
+//            switch publisher {
+//                case TabBarIndex.dc.rawValue:
+//                    superHeroesVC.publisher = .dc
+//                case TabBarIndex.marvel.rawValue:
+//                    superHeroesVC.publisher = .marvel
+//                default:
+//                    break
+//            }
+//        }
+//    }
 }
 
 extension SuperHeroesTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
-        configure(viewController, with: tabBarController.selectedIndex)
+//        configure(viewController, with: tabBarController.selectedIndex)
     }
 }

@@ -19,8 +19,9 @@
 		903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */; };
 		903F03D4257E1D2C00DA7A6B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */; };
 		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
-		90A239F9257E10CA000DB167 /* SuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* SuperHeroesViewController.swift */; };
+		90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */; };
 		90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */; };
+		90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +39,9 @@
 		903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesTabBarController.swift; sourceTree = "<group>"; };
 		903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		90A239EC257E0486000DB167 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		90A239F8257E10CA000DB167 /* SuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewController.swift; sourceTree = "<group>"; };
+		90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroRepository.swift; sourceTree = "<group>"; };
+		90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSuperHeroesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,8 @@
 			children = (
 				900C6351257D5C1F005841F4 /* SplashViewController.swift */,
 				903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */,
-				90A239F8257E10CA000DB167 /* SuperHeroesViewController.swift */,
+				90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */,
+				90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,9 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */,
 				903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */,
 				90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */,
-				90A239F9257E10CA000DB167 /* SuperHeroesViewController.swift in Sources */,
+				90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */,
 				90A239ED257E0486000DB167 /* Constants.swift in Sources */,
 				900C6352257D5C1F005841F4 /* SplashViewController.swift in Sources */,
 				900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */,
