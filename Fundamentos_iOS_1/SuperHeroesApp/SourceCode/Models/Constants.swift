@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct Constants {
-    // MARK: - Segues
-    static let segueFromSplashToTabBar: String = "SEGUE_FROM_SPLASH_TO_TAB_BAR"
-    static let segueFromDCToTabBar: String = "SEGUE_FROM_DC_TO_SUPERHEROES"
-    static let segueFromMarvelToTabBar: String = "SEGUE_FROM_MARVEL_TO_SUPERHEROES"
+// MARK: - Segues
+struct Segues {
+    static let fromSplashToTabBar: String = "SEGUE_FROM_SPLASH_TO_TAB_BAR"
+    static let fromDCToTabBar: String = "SEGUE_FROM_DC_TO_SUPERHEROES"
+    static let fromMarvelToTabBar: String = "SEGUE_FROM_MARVEL_TO_SUPERHEROES"
+}
+
+// MARK: - Storyboards
+struct Storyboards {
+    static let tabBar: String = "TabBar"
 }

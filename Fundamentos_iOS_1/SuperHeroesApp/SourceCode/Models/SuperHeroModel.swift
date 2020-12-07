@@ -70,4 +70,4 @@ struct Work: Codable {
     let occupation, base: String
 }
 
-typealias SuperHero = [SuperHeroElement]
+typealias SuperHeroes = [SuperHeroElement]

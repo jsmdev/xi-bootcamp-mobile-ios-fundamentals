@@ -10,18 +10,22 @@ import UIKit
 class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        addAsyncDelay(seconds: 5)
+        addAsyncDelay()
         navigationController?.isNavigationBarHidden = true
     }
 
-    func addAsyncDelay(seconds: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            self.nextViewController()
+    func addAsyncDelay() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+            self?.nextViewController()
         }
     }
 
     func nextViewController() {
-        performSegue(withIdentifier: Constants.segueFromSplashToTabBar,
-                     sender: nil)
+        let tabBarStoryboard = UIStoryboard(name: Storyboards.tabBar,
+                                            bundle: nil)
+        if let destination = tabBarStoryboard.instantiateInitialViewController() {
+            navigationController?.setViewControllers([destination],
+                                                     animated: true)
+        }
     }
 }
