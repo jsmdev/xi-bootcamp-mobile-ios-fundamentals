@@ -12,6 +12,8 @@ private enum TabBarIndex: Int {
 }
 
 class SuperHeroesTabBarController: UITabBarController {
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -27,10 +29,8 @@ class SuperHeroesTabBarController: UITabBarController {
             switch publisher {
                 case TabBarIndex.dc.rawValue:
                     superHeroesVC.publisher = .dc
-                    print("DC Comics pressed")
                 case TabBarIndex.marvel.rawValue:
                     superHeroesVC.publisher = .marvel
-                    print("MARVEL Comics pressed")
                 default:
                     break
             }
