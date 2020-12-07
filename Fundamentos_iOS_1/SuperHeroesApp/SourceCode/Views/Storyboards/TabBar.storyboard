@@ -53,6 +53,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="aPZ-fh-rs8"/>
                     <connections>
                         <outlet property="tableView" destination="u9T-wT-Orr" id="yiK-So-kSC"/>
+                        <segue destination="BLS-5y-tUP" kind="show" identifier="SEGUE_FROM_DC_TO_DETAIL" id="Zu1-bV-8bQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9N-7G-QAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -84,13 +85,27 @@
                     <tabBarItem key="tabBarItem" title="Item" id="BsT-2g-4hW"/>
                     <connections>
                         <outlet property="tableView" destination="0nl-vb-nmk" id="OJn-P7-H37"/>
+                        <segue destination="BLS-5y-tUP" kind="show" identifier="SEGUE_FROM_MARVEL_TO_DETAIL" id="Rdu-dX-yNp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fB-aL-9Z3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-30" y="-222"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="ZYI-sL-FIu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="BLS-5y-tUP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dvq-QX-4m4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSu-ye-qrt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="-529"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rdu-dX-yNp"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

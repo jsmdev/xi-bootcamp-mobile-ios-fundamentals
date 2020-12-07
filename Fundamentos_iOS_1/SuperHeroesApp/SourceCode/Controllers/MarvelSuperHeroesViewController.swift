@@ -19,6 +19,13 @@ class MarvelSuperHeroesViewController: UIViewController {
         applyPublisherFilter()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SuperHeroDetailViewController,
+           let superHero = sender as? SuperHeroElement {
+            destination.superHero = superHero
+        }
+    }
+
     private func applyPublisherFilter() {
         marvelSuperHeroes =  SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.biography.publisher == Publisher.marvel.rawValue
@@ -37,8 +44,6 @@ extension MarvelSuperHeroesViewController: UITableViewDataSource {
         cell.textLabel?.text = marvelSuperHeroes[indexPath.row].name + " --> " + Publisher.marvel.rawValue
         return cell
     }
-
-
 }
 
 extension MarvelSuperHeroesViewController: UITableViewDataSourcePrefetching {
@@ -48,5 +53,10 @@ extension MarvelSuperHeroesViewController: UITableViewDataSourcePrefetching {
 }
 
 extension MarvelSuperHeroesViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row < marvelSuperHeroes.count {
+            performSegue(withIdentifier: Segues.fromMarvelToDetail,
+                         sender: marvelSuperHeroes[indexPath.row])
+        }
+    }
 }
