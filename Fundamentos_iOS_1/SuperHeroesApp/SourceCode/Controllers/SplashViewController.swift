@@ -11,8 +11,14 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addAsyncDelay(seconds: 5)
     }
 
+    func addAsyncDelay(seconds: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            
+        }
 
+    }
 }
 
