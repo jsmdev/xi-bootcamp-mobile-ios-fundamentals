@@ -16,7 +16,10 @@
 		900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C6365257D5D97005841F4 /* SuperHeroModel.swift */; };
 		900C637E257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */; };
 		900C6382257D74F6005841F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900C6381257D74F6005841F4 /* Assets.xcassets */; };
+		903F03CE257E11E400DA7A6B /* SuperHeroes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F03CD257E11E400DA7A6B /* SuperHeroes.storyboard */; };
+		903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */; };
 		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
+		90A239F9257E10CA000DB167 /* SuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* SuperHeroesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +34,10 @@
 		900C6365257D5D97005841F4 /* SuperHeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroModel.swift; sourceTree = "<group>"; };
 		900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpaper-superheroes-marvel&dc.jpg"; sourceTree = "<group>"; };
 		900C6381257D74F6005841F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		903F03CD257E11E400DA7A6B /* SuperHeroes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuperHeroes.storyboard; sourceTree = "<group>"; };
+		903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesTabBarController.swift; sourceTree = "<group>"; };
 		90A239EC257E0486000DB167 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		90A239F8257E10CA000DB167 /* SuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +88,8 @@
 		900C636B257D6150005841F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				900C6358257D5C20005841F4 /* LaunchScreen.storyboard */,
-				900C6353257D5C1F005841F4 /* Main.storyboard */,
+				90A239F6257E1079000DB167 /* Storyboards */,
+				90A239F7257E1083000DB167 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				900C6351257D5C1F005841F4 /* SplashViewController.swift */,
+				903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */,
+				90A239F8257E10CA000DB167 /* SuperHeroesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				900C636F257D6231005841F4 /* Configurations */,
+				90A239EF257E09B7000DB167 /* Images */,
 				900C6370257D6240005841F4 /* Assets */,
 				900C6371257D624C005841F4 /* Files */,
 			);
@@ -136,7 +145,6 @@
 		900C6371257D624C005841F4 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */,
 				900C6362257D5CC5005841F4 /* SuperHeroes.json */,
 			);
 			path = Files;
@@ -149,6 +157,31 @@
 				900C634F257D5C1F005841F4 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		90A239EF257E09B7000DB167 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		90A239F6257E1079000DB167 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				900C6358257D5C20005841F4 /* LaunchScreen.storyboard */,
+				900C6353257D5C1F005841F4 /* Main.storyboard */,
+				903F03CD257E11E400DA7A6B /* SuperHeroes.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		90A239F7257E1083000DB167 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903F03CE257E11E400DA7A6B /* SuperHeroes.storyboard in Resources */,
 				900C637E257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg in Resources */,
 				900C635A257D5C20005841F4 /* LaunchScreen.storyboard in Resources */,
 				900C6363257D5CC5005841F4 /* SuperHeroes.json in Resources */,
@@ -223,6 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */,
+				90A239F9257E10CA000DB167 /* SuperHeroesViewController.swift in Sources */,
 				90A239ED257E0486000DB167 /* Constants.swift in Sources */,
 				900C6352257D5C1F005841F4 /* SplashViewController.swift in Sources */,
 				900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */,

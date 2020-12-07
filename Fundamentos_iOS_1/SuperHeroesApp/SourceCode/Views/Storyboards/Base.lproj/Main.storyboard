@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="142.02898550724638" y="118.52678571428571"/>
         </scene>
-        <!--Item 2-->
+        <!--Marvel Comics-->
         <scene sceneID="zBj-pJ-M6n">
             <objects>
                 <viewController id="GoQ-sB-5GW" sceneMemberID="viewController">
@@ -55,13 +55,16 @@
                         <viewLayoutGuide key="safeArea" id="5ew-1u-ibc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="PcY-y6-dil"/>
+                    <tabBarItem key="tabBarItem" title="Marvel Comics" id="PcY-y6-dil"/>
+                    <connections>
+                        <segue destination="yPM-3m-N3O" kind="show" identifier="SEGUE_FROM_MARVEL_TO_SUPERHEROES" animates="NO" id="O00-wc-DyV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeV-xE-1B6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.1159420289857" y="647.54464285714278"/>
+            <point key="canvasLocation" x="1941" y="571"/>
         </scene>
-        <!--Item 1-->
+        <!--DC Comics-->
         <scene sceneID="KWS-9S-qSP">
             <objects>
                 <viewController id="Icg-N9-hOg" sceneMemberID="viewController">
@@ -71,16 +74,29 @@
                         <viewLayoutGuide key="safeArea" id="rND-0J-rCy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="3te-nG-5ut"/>
+                    <tabBarItem key="tabBarItem" title="DC Comics" id="3te-nG-5ut"/>
+                    <connections>
+                        <segue destination="yPM-3m-N3O" kind="show" identifier="SEGUE_FROM_DC_TO_SUPERHEROES" animates="NO" id="Sp2-mz-xzy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyA-wz-tfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942.0289855072465" y="-252.45535714285714"/>
+            <point key="canvasLocation" x="1941" y="-346"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Storyboard Reference-->
+        <scene sceneID="lJJ-V7-3gQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SuperHeroesViewController" id="yPM-3m-N3O" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="c7t-Jf-v4A"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyL-60-mdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3021" y="109"/>
+        </scene>
+        <!--Super Heroes Tab Bar Controller-->
         <scene sceneID="Sar-PH-kXX">
             <objects>
-                <tabBarController id="mSJ-JT-fKm" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="SuperHeroesTabBarController" id="mSJ-JT-fKm" customClass="SuperHeroesTabBarController" customModule="Fundamentos_iOS_1" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Tux-ou-VxG"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GjR-Ud-YjV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -115,6 +131,9 @@
             <point key="canvasLocation" x="-768.11594202898561" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="O00-wc-DyV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="wallpaper-superheroes-marvel&amp;dc.jpg" width="750" height="1334"/>
         <systemColor name="systemBackgroundColor">

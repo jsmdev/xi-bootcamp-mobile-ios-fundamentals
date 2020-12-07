@@ -10,4 +10,6 @@ import Foundation
 struct Constants {
     // MARK: - Segues
     static let segueFromSplashToTabBar: String = "SEGUE_FROM_SPLASH_TO_TAB_BAR"
+    static let segueFromDCToTabBar: String = "SEGUE_FROM_DC_TO_SUPERHEROES"
+    static let segueFromMarvelToTabBar: String = "SEGUE_FROM_MARVEL_TO_SUPERHEROES"
 }
