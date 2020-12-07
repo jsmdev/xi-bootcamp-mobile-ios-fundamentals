@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-878" y="-571"/>
         </scene>
-        <!--Item-->
+        <!--DC Universe-->
         <scene sceneID="pAt-tk-C2k">
             <objects>
                 <viewController storyboardIdentifier="DCSuperHeroesViewController" id="zzM-bE-g7J" customClass="DCSuperHeroesViewController" customModule="Fundamentos_iOS_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                             <constraint firstItem="i0H-WX-Gds" firstAttribute="bottom" secondItem="u9T-wT-Orr" secondAttribute="bottom" id="eqU-yo-pOQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="aPZ-fh-rs8"/>
+                    <tabBarItem key="tabBarItem" title="DC Universe" id="aPZ-fh-rs8"/>
                     <connections>
                         <outlet property="tableView" destination="u9T-wT-Orr" id="yiK-So-kSC"/>
                         <segue destination="BLS-5y-tUP" kind="show" identifier="SEGUE_FROM_DC_TO_DETAIL" id="Zu1-bV-8bQ"/>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-29" y="-942"/>
         </scene>
-        <!--Item-->
+        <!--Marvel Universe-->
         <scene sceneID="ueH-F1-0Uz">
             <objects>
                 <viewController storyboardIdentifier="MarvelSuperHeroesViewController" id="gPR-Rq-0Rg" customClass="MarvelSuperHeroesViewController" customModule="Fundamentos_iOS_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,6 +71,55 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nl-vb-nmk">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MarvelTableViewCell" rowHeight="248" id="KLH-1o-6GT" customClass="MarvelTableViewCell" customModule="Fundamentos_iOS_1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="248"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KLH-1o-6GT" id="dtC-tS-crR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="248"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5b-jm-Y8O">
+                                                    <rect key="frame" x="36" y="19" width="342" height="210"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tde-WO-9Nu">
+                                                            <rect key="frame" x="8" y="8" width="194" height="194"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="tde-WO-9Nu" secondAttribute="height" multiplier="1:1" id="fd7-cX-bI3"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzJ-DK-ZqD">
+                                                            <rect key="frame" x="210" y="8" width="124" height="194"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="tde-WO-9Nu" firstAttribute="top" secondItem="n5b-jm-Y8O" secondAttribute="top" constant="8" id="9uo-MY-Uc3"/>
+                                                        <constraint firstItem="EzJ-DK-ZqD" firstAttribute="top" secondItem="n5b-jm-Y8O" secondAttribute="top" constant="8" id="NE1-x7-cNe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tde-WO-9Nu" secondAttribute="bottom" constant="8" id="daA-xs-sfc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EzJ-DK-ZqD" secondAttribute="trailing" constant="8" id="mDS-HM-PGV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="EzJ-DK-ZqD" secondAttribute="bottom" constant="8" id="rRo-Rw-YDj"/>
+                                                        <constraint firstItem="tde-WO-9Nu" firstAttribute="leading" secondItem="n5b-jm-Y8O" secondAttribute="leading" constant="8" id="ukR-MZ-AEO"/>
+                                                        <constraint firstItem="EzJ-DK-ZqD" firstAttribute="leading" secondItem="tde-WO-9Nu" secondAttribute="trailing" constant="8" id="yYU-14-qb7"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n5b-jm-Y8O" secondAttribute="bottom" constant="8" id="CGN-Gb-0zY"/>
+                                                <constraint firstItem="n5b-jm-Y8O" firstAttribute="top" secondItem="dtC-tS-crR" secondAttribute="topMargin" constant="8" id="NmK-wT-L4U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="n5b-jm-Y8O" secondAttribute="trailing" constant="16" id="SoN-In-zue"/>
+                                                <constraint firstItem="n5b-jm-Y8O" firstAttribute="leading" secondItem="dtC-tS-crR" secondAttribute="leadingMargin" constant="16" id="aYn-fn-RcJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="superHeroImageView" destination="tde-WO-9Nu" id="72P-kx-Aar"/>
+                                            <outlet property="superHeroName" destination="EzJ-DK-ZqD" id="hGN-N0-4H8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oRL-R2-QNr"/>
@@ -82,7 +131,7 @@
                             <constraint firstItem="oRL-R2-QNr" firstAttribute="bottom" secondItem="0nl-vb-nmk" secondAttribute="bottom" id="ss7-zv-fFf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BsT-2g-4hW"/>
+                    <tabBarItem key="tabBarItem" title="Marvel Universe" id="BsT-2g-4hW"/>
                     <connections>
                         <outlet property="tableView" destination="0nl-vb-nmk" id="OJn-P7-H37"/>
                         <segue destination="BLS-5y-tUP" kind="show" identifier="SEGUE_FROM_MARVEL_TO_DETAIL" id="Rdu-dX-yNp"/>
@@ -90,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fB-aL-9Z3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="-222"/>
+            <point key="canvasLocation" x="-30.434782608695656" y="-222.32142857142856"/>
         </scene>
         <!--Detail-->
         <scene sceneID="ZYI-sL-FIu">
@@ -112,6 +161,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

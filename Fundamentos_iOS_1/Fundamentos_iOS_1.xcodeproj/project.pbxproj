@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,9 +22,10 @@
 		90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */; };
 		90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */; };
 		90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */; };
-		90BFFFBF257E88C10085F98F /* AllSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFBE257E88C10085F98F /* AllSuperHeroesViewController.swift */; };
 		90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */; };
 		90BFFFC5257E89000085F98F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90BFFFC4257E89000085F98F /* Detail.storyboard */; };
+		90BFFFC9257E8E030085F98F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90BFFFC8257E8E030085F98F /* Kingfisher */; };
+		90BFFFCD257E90100085F98F /* MarvelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +46,9 @@
 		90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroRepository.swift; sourceTree = "<group>"; };
 		90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSuperHeroesViewController.swift; sourceTree = "<group>"; };
-		90BFFFBE257E88C10085F98F /* AllSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
 		90BFFFC4257E89000085F98F /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BFFFC9257E8E030085F98F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +112,6 @@
 			children = (
 				900C6351257D5C1F005841F4 /* SplashViewController.swift */,
 				903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */,
-				90BFFFBE257E88C10085F98F /* AllSuperHeroesViewController.swift */,
 				90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */,
 				90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */,
 				90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */,
@@ -195,6 +196,7 @@
 		90A239F7257E1083000DB167 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -215,6 +217,9 @@
 			dependencies = (
 			);
 			name = Fundamentos_iOS_1;
+			packageProductDependencies = (
+				90BFFFC8257E8E030085F98F /* Kingfisher */,
+			);
 			productName = Fundamentos_iOS_1;
 			productReference = 900C634A257D5C1F005841F4 /* Fundamentos_iOS_1.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 900C6341257D5C1E005841F4;
+			packageReferences = (
+				90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 900C634B257D5C1F005841F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -279,8 +287,8 @@
 				90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */,
 				90A239ED257E0486000DB167 /* Constants.swift in Sources */,
 				90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */,
+				90BFFFCD257E90100085F98F /* MarvelTableViewCell.swift in Sources */,
 				900C6352257D5C1F005841F4 /* SplashViewController.swift in Sources */,
-				90BFFFBF257E88C10085F98F /* AllSuperHeroesViewController.swift in Sources */,
 				900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */,
 				900C634E257D5C1F005841F4 /* AppDelegate.swift in Sources */,
 				900C6350257D5C1F005841F4 /* SceneDelegate.swift in Sources */,
@@ -485,6 +493,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = exactVersion;
+				version = 5.15.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90BFFFC8257E8E030085F98F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 900C6342257D5C1E005841F4 /* Project object */;
 }

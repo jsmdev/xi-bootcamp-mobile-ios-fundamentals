@@ -19,3 +19,9 @@ struct Storyboards {
     static let tabBar: String = "TabBar"
     static let detail: String = "TabBar"
 }
+
+// MARK: - Cells
+struct Cells {
+    static let marvel: String = String(describing: MarvelTableViewCell.self)
+//    static let marvel: String = String(describing: DCTableViewCell.self)
+}

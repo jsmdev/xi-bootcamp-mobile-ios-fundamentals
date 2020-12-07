@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MarvelSuperHeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
@@ -16,6 +17,7 @@ class MarvelSuperHeroesViewController: UIViewController {
         super.viewDidLoad()
         tableView?.delegate = self
         tableView?.dataSource = self
+        tableView?.prefetchDataSource = self
         applyPublisherFilter()
     }
 
@@ -30,25 +32,32 @@ class MarvelSuperHeroesViewController: UIViewController {
         marvelSuperHeroes =  SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.biography.publisher == Publisher.marvel.rawValue
         })
-        print(marvelSuperHeroes.count)
     }
 }
 
 extension MarvelSuperHeroesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return marvelSuperHeroes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = marvelSuperHeroes[indexPath.row].name + " --> " + Publisher.marvel.rawValue
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.marvel,
+                                                 for: indexPath) as? MarvelTableViewCell
+        if(indexPath.row < marvelSuperHeroes.count) {
+            cell?.configure(with: marvelSuperHeroes[indexPath.row])
+        }
+        return cell ?? UITableViewCell()
     }
 }
 
 extension MarvelSuperHeroesViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-
+        let urls = indexPaths.compactMap { URL(string: marvelSuperHeroes[$0.row].images.lg) }
+        ImagePrefetcher(urls: urls).start()
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import Kingfisher
 
 class DCSuperHeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
@@ -16,6 +17,7 @@ class DCSuperHeroesViewController: UIViewController {
         super.viewDidLoad()
         tableView?.delegate = self
         tableView?.dataSource = self
+        tableView?.prefetchDataSource = self
         applyPublisherFilter()
     }
 
@@ -30,7 +32,6 @@ class DCSuperHeroesViewController: UIViewController {
         dcSuperHeroes =  SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.biography.publisher == Publisher.dc.rawValue
         })
-        print(dcSuperHeroes.count)
     }
 }
 
