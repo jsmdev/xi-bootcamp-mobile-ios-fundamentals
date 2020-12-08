@@ -17,6 +17,7 @@ struct SuperHeroElement: Codable {
     let work: Work
     let connections: Connections
     let images: Images
+    var isFavorite: Bool?
 }
 
 // MARK: - Appearance

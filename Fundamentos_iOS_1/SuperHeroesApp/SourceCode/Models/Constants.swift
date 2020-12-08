@@ -12,6 +12,7 @@ struct Segues {
     static let fromSplashToTabBar: String = "SEGUE_FROM_SPLASH_TO_TAB_BAR"
     static let fromDCToDetail: String = "SEGUE_FROM_DC_TO_DETAIL"
     static let fromMarvelToDetail: String = "SEGUE_FROM_MARVEL_TO_DETAIL"
+    static let fromAllSuperHeroesToDetail: String = "SEGUE_FROM_ALL_SUPER_HEROES_TO_DETAIL"
 }
 
 // MARK: - Storyboards
@@ -23,7 +24,7 @@ struct Storyboards {
 // MARK: - Cells
 struct Cells {
     static let marvel: String = String(describing: MarvelTableViewCell.self)
-//    static let marvel: String = String(describing: DCTableViewCell.self)
+    static let superHeroCollection: String = String(describing: SuperHeroCollectionViewCell.self)
 }
 
 // MARK: - Values

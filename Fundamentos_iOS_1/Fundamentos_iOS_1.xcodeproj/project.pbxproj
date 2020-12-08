@@ -16,6 +16,8 @@
 		900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C6365257D5D97005841F4 /* SuperHeroModel.swift */; };
 		900C637E257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */; };
 		900C6382257D74F6005841F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900C6381257D74F6005841F4 /* Assets.xcassets */; };
+		901ED1BF2580089200E5F6A8 /* AllSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901ED1BE2580089200E5F6A8 /* AllSuperHeroesViewController.swift */; };
+		901ED1C325800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901ED1C225800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift */; };
 		903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */; };
 		903F03D4257E1D2C00DA7A6B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */; };
 		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
@@ -40,6 +42,8 @@
 		900C6365257D5D97005841F4 /* SuperHeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroModel.swift; sourceTree = "<group>"; };
 		900C637D257D735D005841F4 /* wallpaper-superheroes-marvel&dc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpaper-superheroes-marvel&dc.jpg"; sourceTree = "<group>"; };
 		900C6381257D74F6005841F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		901ED1BE2580089200E5F6A8 /* AllSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSuperHeroesViewController.swift; sourceTree = "<group>"; };
+		901ED1C225800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesTabBarController.swift; sourceTree = "<group>"; };
 		903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		90A239EC257E0486000DB167 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -112,8 +116,9 @@
 			children = (
 				900C6351257D5C1F005841F4 /* SplashViewController.swift */,
 				903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */,
-				90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */,
 				90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */,
+				90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */,
+				901ED1BE2580089200E5F6A8 /* AllSuperHeroesViewController.swift */,
 				90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */,
 			);
 			path = Controllers;
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */,
+				901ED1C225800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -285,12 +291,14 @@
 				903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */,
 				90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */,
 				90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */,
+				901ED1C325800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift in Sources */,
 				90A239ED257E0486000DB167 /* Constants.swift in Sources */,
 				90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */,
 				90BFFFCD257E90100085F98F /* MarvelTableViewCell.swift in Sources */,
 				900C6352257D5C1F005841F4 /* SplashViewController.swift in Sources */,
 				900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */,
 				900C634E257D5C1F005841F4 /* AppDelegate.swift in Sources */,
+				901ED1BF2580089200E5F6A8 /* AllSuperHeroesViewController.swift in Sources */,
 				900C6350257D5C1F005841F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
