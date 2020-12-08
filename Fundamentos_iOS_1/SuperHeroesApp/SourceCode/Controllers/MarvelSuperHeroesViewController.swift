@@ -37,7 +37,7 @@ class MarvelSuperHeroesViewController: UIViewController {
 
 extension MarvelSuperHeroesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 200
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

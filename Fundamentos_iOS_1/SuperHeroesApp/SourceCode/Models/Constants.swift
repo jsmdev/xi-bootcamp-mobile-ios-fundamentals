@@ -25,3 +25,9 @@ struct Cells {
     static let marvel: String = String(describing: MarvelTableViewCell.self)
 //    static let marvel: String = String(describing: DCTableViewCell.self)
 }
+
+// MARK: - Values
+struct Values {
+    static let cornerRadius: Float = 12.0
+    static let shadowOpacity: Float = 0.7
+}
