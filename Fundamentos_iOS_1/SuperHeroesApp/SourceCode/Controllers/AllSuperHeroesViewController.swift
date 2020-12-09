@@ -18,6 +18,8 @@ class AllSuperHeroesViewController: UIViewController {
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.prefetchDataSource = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
+        title = "Super Heroes"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,6 +27,34 @@ class AllSuperHeroesViewController: UIViewController {
            let superHero = sender as? SuperHeroElement {
             destination.superHero = superHero
         }
+    }
+
+    @objc private func filterBy() {
+        let ac = UIAlertController(title: "Filter heroes by alignment...", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: Alignment.good.rawValue.capitalized, style: .default, handler: filter))
+        ac.addAction(UIAlertAction(title: Alignment.neutral.rawValue.capitalized, style: .default, handler: filter))
+        ac.addAction(UIAlertAction(title: Alignment.bad.rawValue.capitalized, style: .destructive, handler: filter))
+        ac.addAction(UIAlertAction(title: "All", style: .cancel, handler: filter))
+        present(ac, animated: true)
+    }
+
+    func filter(action: UIAlertAction) {
+        guard let alignment = action.title?.lowercased() else {
+            return
+        }
+        let allSuperHeroes = SuperHeroRepository.shared.superHeroes
+        switch alignment {
+            case Alignment.good.rawValue:
+                superHeroes = allSuperHeroes.filter({return $0.biography.alignment == Alignment.good })
+            case Alignment.neutral.rawValue:
+                superHeroes = allSuperHeroes.filter({return $0.biography.alignment == Alignment.neutral })
+            case Alignment.bad.rawValue:
+                superHeroes = allSuperHeroes.filter({return $0.biography.alignment == Alignment.bad })
+            default:
+                superHeroes = allSuperHeroes
+        }
+        collectionView?.reloadData()
+//        collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
     }
 }
 

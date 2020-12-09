@@ -11,7 +11,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addAsyncDelay()
-        navigationController?.isNavigationBarHidden = true
     }
 
     func addAsyncDelay() {
@@ -23,9 +22,9 @@ class SplashViewController: UIViewController {
     func nextViewController() {
         let tabBarStoryboard = UIStoryboard(name: Storyboards.tabBar,
                                             bundle: nil)
-        if let destination = tabBarStoryboard.instantiateInitialViewController() {
-            navigationController?.setViewControllers([destination],
-                                                     animated: true)
+        if let destination = tabBarStoryboard.instantiateInitialViewController(),
+           let window = SceneDelegate.shared.window {
+            window.rootViewController = destination
         }
     }
 }
