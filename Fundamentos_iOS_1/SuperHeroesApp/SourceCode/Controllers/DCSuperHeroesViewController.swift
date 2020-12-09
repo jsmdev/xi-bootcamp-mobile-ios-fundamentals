@@ -19,6 +19,7 @@ class DCSuperHeroesViewController: UIViewController {
         tableView?.dataSource = self
         tableView?.prefetchDataSource = self
         applyPublisherFilter()
+        title = "DC Universe"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
