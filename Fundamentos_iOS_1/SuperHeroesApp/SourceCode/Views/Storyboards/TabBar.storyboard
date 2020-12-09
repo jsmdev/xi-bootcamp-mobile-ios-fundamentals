@@ -451,7 +451,7 @@
         <scene sceneID="THk-kK-TtM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dpc-Az-AT5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Super Heroes" id="2JM-IC-EAq"/>
+                    <tabBarItem key="tabBarItem" title="Super Heroes" image="person.3" catalog="system" selectedImage="person.3.fill" id="2JM-IC-EAq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VYg-pq-VhR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -466,11 +466,11 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="-571.20535714285711"/>
         </scene>
-        <!--MARVEL Universe-->
+        <!--MARVEL-->
         <scene sceneID="Szb-Lu-oWc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uii-Mn-xNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MARVEL Universe" id="BsT-2g-4hW"/>
+                    <tabBarItem key="tabBarItem" title="MARVEL" image="paperplane.circle" catalog="system" selectedImage="paperplane.circle.fill" id="BsT-2g-4hW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMj-gV-K2z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -485,11 +485,11 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="-1296.4285714285713"/>
         </scene>
-        <!--DC Universe-->
+        <!--DC-->
         <scene sceneID="w8Y-DU-bPh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rG7-hu-CM9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="DC Universe" id="aPZ-fh-rs8"/>
+                    <tabBarItem key="tabBarItem" title="DC" image="moon.circle" catalog="system" selectedImage="moon.circle.fill" id="aPZ-fh-rs8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fkY-LU-DYY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -509,6 +509,12 @@
         <segue reference="Zu1-bV-8bQ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="moon.circle" catalog="system" width="128" height="121"/>
+        <image name="moon.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="paperplane.circle" catalog="system" width="128" height="121"/>
+        <image name="paperplane.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
