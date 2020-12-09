@@ -20,6 +20,7 @@
 		901ED1C325800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901ED1C225800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift */; };
 		903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */; };
 		903F03D4257E1D2C00DA7A6B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */; };
+		909BDC3E2581222F00F61A99 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 909BDC3D2581222F00F61A99 /* Cosmos */; };
 		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
 		90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */; };
 		90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909BDC3E2581222F00F61A99 /* Cosmos in Frameworks */,
 				90BFFFC9257E8E030085F98F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +227,7 @@
 			name = Fundamentos_iOS_1;
 			packageProductDependencies = (
 				90BFFFC8257E8E030085F98F /* Kingfisher */,
+				909BDC3D2581222F00F61A99 /* Cosmos */,
 			);
 			productName = Fundamentos_iOS_1;
 			productReference = 900C634A257D5C1F005841F4 /* Fundamentos_iOS_1.app */;
@@ -255,6 +258,7 @@
 			mainGroup = 900C6341257D5C1E005841F4;
 			packageReferences = (
 				90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				909BDC3C2581222F00F61A99 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 900C634B257D5C1F005841F4 /* Products */;
 			projectDirPath = "";
@@ -503,6 +507,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		909BDC3C2581222F00F61A99 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = exactVersion;
+				version = 23.0.0;
+			};
+		};
 		90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -514,6 +526,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		909BDC3D2581222F00F61A99 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 909BDC3C2581222F00F61A99 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
 		90BFFFC8257E8E030085F98F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */;
