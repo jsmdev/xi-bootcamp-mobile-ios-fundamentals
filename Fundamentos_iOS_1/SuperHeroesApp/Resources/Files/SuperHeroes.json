@@ -1428,7 +1428,7 @@
             "placeOfBirth": "San Francisco, California",
             "firstAppearance": "Amazing Spider-Man #569 (as Anti-Venom)",
             "publisher": "Toxin",
-            "alignment": "-"
+            "alignment": "bad"
         },
         "work": {
             "occupation": "Vigilante; former journalist for the Daily Globe",
@@ -4490,7 +4490,7 @@
             "placeOfBirth": "Armechadon",
             "firstAppearance": "Thunderstrike #6 (March, 1994)",
             "publisher": "Marvel Comics",
-            "alignment": "-"
+            "alignment": "bad"
         },
         "work": {
             "occupation": "Freedom Fighter",
@@ -5231,7 +5231,7 @@
             "placeOfBirth": "-",
             "firstAppearance": "The Fly (1986)",
             "publisher": "",
-            "alignment": "-"
+            "alignment": "bad"
         },
         "work": {
             "occupation": "Scientist",
@@ -17070,7 +17070,7 @@
             "placeOfBirth": "-",
             "firstAppearance": "Spawn #75",
             "publisher": "Image Comics",
-            "alignment": "-"
+            "alignment": "good"
         },
         "work": {
             "occupation": "-",
@@ -21711,7 +21711,7 @@
             "placeOfBirth": "-",
             "firstAppearance": "-",
             "publisher": "Star Trek",
-            "alignment": "-"
+            "alignment": "good"
         },
         "work": {
             "occupation": "-",
@@ -28666,7 +28666,7 @@
             "placeOfBirth": "-",
             "firstAppearance": "What If? Iron Man: Demon in an Armor #1 (February, 2011)",
             "publisher": "Deadpool",
-            "alignment": "-"
+            "alignment": "bad"
         },
         "work": {
             "occupation": "Conqueror; Adventurer",
