@@ -32,8 +32,8 @@ extension AllSuperHeroesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.width / 3
-        let cellHeight = cellWidth * 1.3333
+        let cellWidth = UIScreen.main.bounds.width / 3 - (8 + 8 + 16 + 16)
+        let cellHeight = cellWidth + 60
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }
@@ -46,19 +46,11 @@ extension AllSuperHeroesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.superHeroCollection,
                                                       for: indexPath) as? SuperHeroCollectionViewCell
+        if(indexPath.row < superHeroes.count) {
+            cell?.configure(with: superHeroes[indexPath.row])
+        }
         return cell ?? UICollectionViewCell()
     }
-
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuperHeroCollectionViewCell",
-//                                                      for: indexPath) as? SuperHeroCollectionViewCell
-//
-//        if(indexPath.row < friends.count) {
-//            cell?.configureViews(friend: friends[indexPath.row])
-//        }
-//
-//        return cell ?? UICollectionViewCell()
-//    }
 }
 
 extension AllSuperHeroesViewController: UICollectionViewDataSourcePrefetching {
