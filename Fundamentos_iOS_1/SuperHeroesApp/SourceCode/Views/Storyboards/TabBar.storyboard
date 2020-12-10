@@ -704,7 +704,7 @@
         <scene sceneID="Szb-Lu-oWc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uii-Mn-xNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MARVEL Universe" image="play.circle" catalog="system" selectedImage="play.circle.fill" id="BsT-2g-4hW"/>
+                    <tabBarItem key="tabBarItem" title="MARVEL Universe" image="pencil.circle.fill" catalog="system" selectedImage="pencil.circle" id="BsT-2g-4hW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMj-gV-K2z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -745,10 +745,10 @@
     <resources>
         <image name="moon.circle" catalog="system" width="128" height="121"/>
         <image name="moon.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="play.circle" catalog="system" width="128" height="121"/>
-        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
