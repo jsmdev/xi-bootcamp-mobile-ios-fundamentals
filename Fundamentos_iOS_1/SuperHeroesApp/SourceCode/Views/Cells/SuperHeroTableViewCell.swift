@@ -1,5 +1,5 @@
 //
-//  MarvelTableViewCell.swift
+//  SuperHeroTableViewCell.swift
 //  Fundamentos_iOS_1
 //
 //  Created by José Sancho on 7/12/20.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MarvelTableViewCell: UITableViewCell {
+class SuperHeroTableViewCell: UITableViewCell {
     @IBOutlet weak var contentBackgroundView: UIView?
     @IBOutlet weak var fotoImageView: UIImageView?
     @IBOutlet weak var nameLabel: UILabel?

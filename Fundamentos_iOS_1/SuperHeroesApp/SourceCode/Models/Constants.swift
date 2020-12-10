@@ -23,7 +23,7 @@ struct Storyboards {
 
 // MARK: - Cells
 struct Cells {
-    static let marvel: String = String(describing: MarvelTableViewCell.self)
+    static let superHeroTableView: String = String(describing: SuperHeroTableViewCell.self)
     static let superHeroCollection: String = String(describing: SuperHeroCollectionViewCell.self)
 }
 

@@ -46,8 +46,8 @@ extension MarvelSuperHeroesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.marvel,
-                                                 for: indexPath) as? MarvelTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.superHeroTableView,
+                                                 for: indexPath) as? SuperHeroTableViewCell
         if(indexPath.row < marvelSuperHeroes.count) {
             cell?.configure(with: marvelSuperHeroes[indexPath.row])
         }

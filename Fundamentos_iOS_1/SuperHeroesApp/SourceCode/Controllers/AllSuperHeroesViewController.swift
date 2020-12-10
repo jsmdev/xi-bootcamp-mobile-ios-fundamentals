@@ -25,7 +25,7 @@ class AllSuperHeroesViewController: UIViewController {
         collectionView?.dataSource = self
         collectionView?.prefetchDataSource = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "All", style: .plain, target: self, action: #selector(showAll))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show all", style: .plain, target: self, action: #selector(showAll))
         title = "Super Heroes"
     }
 

@@ -31,7 +31,7 @@
 		90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */; };
 		90BFFFC5257E89000085F98F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90BFFFC4257E89000085F98F /* Detail.storyboard */; };
 		90BFFFC9257E8E030085F98F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90BFFFC8257E8E030085F98F /* Kingfisher */; };
-		90BFFFCD257E90100085F98F /* MarvelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */; };
+		90BFFFCD257E90100085F98F /* SuperHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFCC257E90100085F98F /* SuperHeroTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,7 @@
 		90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
 		90BFFFC4257E89000085F98F /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTableViewCell.swift; sourceTree = "<group>"; };
+		90BFFFCC257E90100085F98F /* SuperHeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +211,7 @@
 		90A239F7257E1083000DB167 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				90BFFFCC257E90100085F98F /* MarvelTableViewCell.swift */,
+				90BFFFCC257E90100085F98F /* SuperHeroTableViewCell.swift */,
 				901ED1C225800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -318,7 +318,7 @@
 				901ED1C325800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift in Sources */,
 				90A239ED257E0486000DB167 /* Constants.swift in Sources */,
 				90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */,
-				90BFFFCD257E90100085F98F /* MarvelTableViewCell.swift in Sources */,
+				90BFFFCD257E90100085F98F /* SuperHeroTableViewCell.swift in Sources */,
 				900C6352257D5C1F005841F4 /* SplashViewController.swift in Sources */,
 				900C6366257D5D97005841F4 /* SuperHeroModel.swift in Sources */,
 				900C634E257D5C1F005841F4 /* AppDelegate.swift in Sources */,
