@@ -6,11 +6,11 @@
 //
 
 import UIKit
-//import Kingfisher
+import Kingfisher
 
 class DCSuperHeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
-    
+
     var dcSuperHeroes = SuperHeroes()
 
     override func viewDidLoad() {
@@ -37,20 +37,28 @@ class DCSuperHeroesViewController: UIViewController {
 }
 
 extension DCSuperHeroesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dcSuperHeroes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = dcSuperHeroes[indexPath.row].name + " --> " + Publisher.dc.rawValue
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.superHeroTableView,
+                                                 for: indexPath) as? SuperHeroTableViewCell
+        if(indexPath.row < dcSuperHeroes.count) {
+            cell?.configure(with: dcSuperHeroes[indexPath.row])
+        }
+        return cell ?? UITableViewCell()
     }
 }
 
 extension DCSuperHeroesViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-
+        let urls = indexPaths.compactMap { URL(string: dcSuperHeroes[$0.row].images.lg) }
+        ImagePrefetcher(urls: urls).start()
     }
 }
 
