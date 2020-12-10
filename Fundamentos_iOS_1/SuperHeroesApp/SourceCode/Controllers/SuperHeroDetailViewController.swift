@@ -37,7 +37,9 @@ class SuperHeroDetailViewController: UIViewController {
 
         buttonBackgroundView?.layer.cornerRadius = CGFloat(6)
 
-        fullNameLabel?.text = superHero?.biography.fullName.count ?? 0 <= 0 ? superHero?.name : superHero?.biography.fullName
+        let fullName = superHero?.biography.fullName.count ?? 0 <= 0 ? superHero?.name : superHero?.biography.fullName
+        let publisher = superHero?.biography.publisher
+        fullNameLabel?.text = "\(fullName ?? "") (\(publisher ?? ""))"
         alignmentLabel?.text = superHero?.biography.alignment.rawValue.capitalized
         genderLabel?.text = superHero?.appearance.gender.rawValue.count ?? 0 <= 0 ? "-" : superHero?.appearance.gender.rawValue
         raceLabel?.text = superHero?.appearance.race?.count ?? 0 <= 0 ? "-" : superHero?.appearance.race
@@ -73,8 +75,6 @@ class SuperHeroDetailViewController: UIViewController {
             combatRatingView.rating = Double(combatValue) / 10.0
             combatRatingView.text = "(\(combatValue))"
         }
-
-
     }
 
     override func viewWillAppear(_ animated: Bool) {

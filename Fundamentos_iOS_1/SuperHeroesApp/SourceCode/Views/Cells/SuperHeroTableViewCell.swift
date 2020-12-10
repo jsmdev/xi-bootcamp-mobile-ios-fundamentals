@@ -25,8 +25,8 @@ class SuperHeroTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         contentBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius)
-        contentBackgroundView?.layer.shadowColor = UIColor.clear.cgColor
-        contentBackgroundView?.layer.shadowOffset = CGSize(width: 6, height: 6) // CGSize.zero
+        contentBackgroundView?.layer.shadowColor = UIColor.gray.cgColor
+        contentBackgroundView?.layer.shadowOffset = CGSize.zero
         contentBackgroundView?.layer.shadowOpacity = Values.cornerRadius
         contentBackgroundView?.layer.shadowRadius = CGFloat(Values.shadowOpacity)
 

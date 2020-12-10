@@ -18,10 +18,8 @@ class SuperHeroCollectionViewCell: UICollectionViewCell {
         if let width = fotoImageView?.bounds.width {
             fotoImageView?.layer.cornerRadius =  width / 2
         }
-        fotoImageView?.layer.shadowColor = UIColor.gray.cgColor
-        fotoImageView?.layer.shadowOffset = CGSize.zero
-        fotoImageView?.layer.shadowOpacity = Values.cornerRadius
-        fotoImageView?.layer.shadowRadius = CGFloat(Values.shadowOpacity)
+        fotoImageView?.layer.borderWidth = 1
+        fotoImageView?.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     override func prepareForReuse() {
