@@ -466,11 +466,11 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="-571.20535714285711"/>
         </scene>
-        <!--MARVEL-->
+        <!--MARVEL Universe-->
         <scene sceneID="Szb-Lu-oWc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uii-Mn-xNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MARVEL" image="paperplane.circle" catalog="system" selectedImage="paperplane.circle.fill" id="BsT-2g-4hW"/>
+                    <tabBarItem key="tabBarItem" title="MARVEL Universe" image="paperplane.circle" catalog="system" selectedImage="paperplane.circle.fill" id="BsT-2g-4hW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMj-gV-K2z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -485,11 +485,11 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="-1296.4285714285713"/>
         </scene>
-        <!--DC-->
+        <!--DC Universe-->
         <scene sceneID="w8Y-DU-bPh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rG7-hu-CM9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="DC" image="moon.circle" catalog="system" selectedImage="moon.circle.fill" id="aPZ-fh-rs8"/>
+                    <tabBarItem key="tabBarItem" title="DC Universe" image="moon.circle" catalog="system" selectedImage="moon.circle.fill" id="aPZ-fh-rs8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fkY-LU-DYY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

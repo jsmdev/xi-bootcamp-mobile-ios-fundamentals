@@ -29,7 +29,7 @@ struct Appearance: Codable {
 }
 
 enum Gender: String, Codable {
-    case empty = "-"
+    case undefined = "-"
     case female = "Female"
     case male = "Male"
 }
@@ -45,7 +45,6 @@ struct Biography: Codable {
 
 enum Alignment: String, Codable {
     case bad = "bad"
-    case empty = "-"
     case good = "good"
     case neutral = "neutral"
 }

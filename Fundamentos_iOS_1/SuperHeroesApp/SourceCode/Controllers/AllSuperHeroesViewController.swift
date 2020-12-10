@@ -8,6 +8,12 @@
 import UIKit
 import Kingfisher
 
+private enum FilterOption: String {
+    case alignment = "Alignment"
+    case gender = "Gender"
+    case publisher = "Publisher"
+}
+
 class AllSuperHeroesViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView?
 
@@ -19,6 +25,7 @@ class AllSuperHeroesViewController: UIViewController {
         collectionView?.dataSource = self
         collectionView?.prefetchDataSource = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "All", style: .plain, target: self, action: #selector(showAll))
         title = "Super Heroes"
     }
 
@@ -29,32 +36,82 @@ class AllSuperHeroesViewController: UIViewController {
         }
     }
 
+    @objc func showAll() {
+        superHeroes = SuperHeroRepository.shared.superHeroes
+        updateCollectionView()
+    }
+    
     @objc private func filterBy() {
-        let ac = UIAlertController(title: "Filter heroes by alignment...", message: nil, preferredStyle: .actionSheet)
-        ac.addAction(UIAlertAction(title: Alignment.good.rawValue.capitalized, style: .default, handler: filter))
-        ac.addAction(UIAlertAction(title: Alignment.neutral.rawValue.capitalized, style: .default, handler: filter))
-        ac.addAction(UIAlertAction(title: Alignment.bad.rawValue.capitalized, style: .destructive, handler: filter))
-        ac.addAction(UIAlertAction(title: "All", style: .cancel, handler: filter))
+        let ac = UIAlertController(title: "Filter heroes by...", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Alignment", style: .default, handler: showAlignmentFilter))
+        ac.addAction(UIAlertAction(title: "Gender", style: .default, handler: showGenderFilter))
+        ac.addAction(UIAlertAction(title: "Publisher", style: .default, handler: showPublisherFilter))
+        ac.addAction(UIAlertAction(title: "All", style: .cancel, handler: showAllSuperHeroes))
         present(ac, animated: true)
     }
 
-    func filter(action: UIAlertAction) {
-        guard let alignment = action.title?.lowercased() else {
+    func showAlignmentFilter(action: UIAlertAction) {
+        let ac = UIAlertController(title: "Filter heroes by alignment...", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: Alignment.good.rawValue.capitalized, style: .default, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: Alignment.neutral.rawValue.capitalized, style: .default, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: Alignment.bad.rawValue.capitalized, style: .destructive, handler: filterByAlignment))
+        present(ac, animated: true)
+    }
+
+    func showGenderFilter(action: UIAlertAction) {
+        let ac = UIAlertController(title: "Filter heroes by gender...", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: Gender.female.rawValue.capitalized, style: .default, handler: filterByGender))
+        ac.addAction(UIAlertAction(title: Gender.male.rawValue.capitalized, style: .default, handler: filterByGender))
+        ac.addAction(UIAlertAction(title: "Undefined", style: .default, handler: filterByGender))
+        present(ac, animated: true)
+    }
+
+    func showPublisherFilter(action: UIAlertAction) {
+        let publisherVC = PublisherTableViewController()
+        publisherVC.delegate = self
+        present(publisherVC, animated: true)
+    }
+
+    func showAllSuperHeroes(action: UIAlertAction) {
+        showAll()
+    }
+
+    func filterByAlignment(action: UIAlertAction) {
+        guard let alignmentTitle = action.title?.lowercased(),
+              let alignment = Alignment(rawValue: alignmentTitle) else {
             return
         }
         let allSuperHeroes = SuperHeroRepository.shared.superHeroes
-        switch alignment {
-            case Alignment.good.rawValue:
-                superHeroes = allSuperHeroes.filter({return $0.biography.alignment == Alignment.good })
-            case Alignment.neutral.rawValue:
-                superHeroes = allSuperHeroes.filter({return $0.biography.alignment == Alignment.neutral })
-            case Alignment.bad.rawValue:
-                superHeroes = allSuperHeroes.filter({return $0.biography.alignment == Alignment.bad })
-            default:
-                superHeroes = allSuperHeroes
+        superHeroes = allSuperHeroes.filter({return $0.biography.alignment == alignment })
+        updateCollectionView()
+    }
+
+    func filterByGender(action: UIAlertAction) {
+        guard let gender = action.title else {
+            return
         }
-        collectionView?.reloadData()
-//        collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+        let allSuperHeroes = SuperHeroRepository.shared.superHeroes
+        switch gender {
+            case Gender.female.rawValue:
+                superHeroes = allSuperHeroes.filter({return $0.appearance.gender == Gender.female })
+            case Gender.male.rawValue:
+                superHeroes = allSuperHeroes.filter({return $0.appearance.gender == Gender.male })
+            default:
+                superHeroes = allSuperHeroes.filter({return $0.appearance.gender == Gender.undefined })
+        }
+        updateCollectionView()
+    }
+
+    func filterByPublisher(with name: String) {
+        let allSuperHeroes = SuperHeroRepository.shared.superHeroes
+        superHeroes = allSuperHeroes.filter({return $0.biography.publisher == name })
+        updateCollectionView()
+    }
+
+    private func updateCollectionView() {
+        collectionView?.reloadData {
+            self.collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+        }
     }
 }
 
@@ -96,5 +153,11 @@ extension AllSuperHeroesViewController: UICollectionViewDelegate {
             performSegue(withIdentifier: Segues.fromAllSuperHeroesToDetail,
                          sender: superHeroes[indexPath.row])
         }
+    }
+}
+
+extension AllSuperHeroesViewController: PublisherTableViewDelegate {
+    func didSelect(_ publisher: String) {
+        filterByPublisher(with: publisher)
     }
 }

@@ -23,6 +23,8 @@
 		909BDC3E2581222F00F61A99 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 909BDC3D2581222F00F61A99 /* Cosmos */; };
 		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
 		90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */; };
+		90B4512025823E9000131027 /* PublisherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4511F25823E9000131027 /* PublisherTableViewController.swift */; };
+		90B451242582458C00131027 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B451232582458C00131027 /* UICollectionView+Extensions.swift */; };
 		90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */; };
 		90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */; };
 		90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */; };
@@ -49,6 +51,8 @@
 		903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		90A239EC257E0486000DB167 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCSuperHeroesViewController.swift; sourceTree = "<group>"; };
+		90B4511F25823E9000131027 /* PublisherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherTableViewController.swift; sourceTree = "<group>"; };
+		90B451232582458C00131027 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroRepository.swift; sourceTree = "<group>"; };
 		90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 		900C636A257D6149005841F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				90B451262582459700131027 /* Extensions */,
 				90A239EC257E0486000DB167 /* Constants.swift */,
 				900C6365257D5D97005841F4 /* SuperHeroModel.swift */,
 				90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */,
@@ -122,6 +127,7 @@
 				90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */,
 				901ED1BE2580089200E5F6A8 /* AllSuperHeroesViewController.swift */,
 				90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */,
+				90B4511F25823E9000131027 /* PublisherTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +215,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		90B451262582459700131027 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90B451232582458C00131027 /* UICollectionView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,7 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B4512025823E9000131027 /* PublisherTableViewController.swift in Sources */,
 				90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */,
+				90B451242582458C00131027 /* UICollectionView+Extensions.swift in Sources */,
 				903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */,
 				90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */,
 				90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */,
@@ -451,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6XH3L8937;
 				INFOPLIST_FILE = SuperHeroesApp/Resources/Configurations/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,6 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6XH3L8937;
 				INFOPLIST_FILE = SuperHeroesApp/Resources/Configurations/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
