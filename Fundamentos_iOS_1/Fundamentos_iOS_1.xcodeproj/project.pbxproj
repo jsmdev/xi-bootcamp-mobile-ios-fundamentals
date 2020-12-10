@@ -25,6 +25,7 @@
 		90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */; };
 		90B4512025823E9000131027 /* PublisherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4511F25823E9000131027 /* PublisherTableViewController.swift */; };
 		90B451242582458C00131027 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B451232582458C00131027 /* UICollectionView+Extensions.swift */; };
+		90B4512F258260A200131027 /* Agrume in Frameworks */ = {isa = PBXBuildFile; productRef = 90B4512E258260A200131027 /* Agrume */; };
 		90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFB2257E457F0085F98F /* SuperHeroRepository.swift */; };
 		90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFBB257E85740085F98F /* MarvelSuperHeroesViewController.swift */; };
 		90BFFFC2257E88D70085F98F /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFFFC1257E88D70085F98F /* SuperHeroDetailViewController.swift */; };
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B4512F258260A200131027 /* Agrume in Frameworks */,
 				909BDC3E2581222F00F61A99 /* Cosmos in Frameworks */,
 				90BFFFC9257E8E030085F98F /* Kingfisher in Frameworks */,
 			);
@@ -242,6 +244,7 @@
 			packageProductDependencies = (
 				90BFFFC8257E8E030085F98F /* Kingfisher */,
 				909BDC3D2581222F00F61A99 /* Cosmos */,
+				90B4512E258260A200131027 /* Agrume */,
 			);
 			productName = Fundamentos_iOS_1;
 			productReference = 900C634A257D5C1F005841F4 /* Fundamentos_iOS_1.app */;
@@ -273,6 +276,7 @@
 			packageReferences = (
 				90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				909BDC3C2581222F00F61A99 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				90B4512D258260A200131027 /* XCRemoteSwiftPackageReference "Agrume" */,
 			);
 			productRefGroup = 900C634B257D5C1F005841F4 /* Products */;
 			projectDirPath = "";
@@ -533,6 +537,14 @@
 				version = 23.0.0;
 			};
 		};
+		90B4512D258260A200131027 /* XCRemoteSwiftPackageReference "Agrume" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JanGorman/Agrume.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.11;
+			};
+		};
 		90BFFFC7257E8E030085F98F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -548,6 +560,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 909BDC3C2581222F00F61A99 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		90B4512E258260A200131027 /* Agrume */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90B4512D258260A200131027 /* XCRemoteSwiftPackageReference "Agrume" */;
+			productName = Agrume;
 		};
 		90BFFFC8257E8E030085F98F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

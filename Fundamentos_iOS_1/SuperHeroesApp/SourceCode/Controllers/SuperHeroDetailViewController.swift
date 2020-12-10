@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import Agrume
 
 class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
@@ -26,12 +27,16 @@ class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var durabilityRatingView: CosmosView!
     @IBOutlet weak var powerRatingView: CosmosView!
     @IBOutlet weak var combatRatingView: CosmosView!
+    @IBOutlet weak var buttonBackgroundView: UIView!
 
     var superHero: SuperHeroElement?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = superHero?.name
+
+        buttonBackgroundView?.layer.cornerRadius = CGFloat(6)
+
         fullNameLabel?.text = superHero?.biography.fullName.count ?? 0 <= 0 ? superHero?.name : superHero?.biography.fullName
         alignmentLabel?.text = superHero?.biography.alignment.rawValue.capitalized
         genderLabel?.text = superHero?.appearance.gender.rawValue.count ?? 0 <= 0 ? "-" : superHero?.appearance.gender.rawValue
@@ -80,5 +85,12 @@ class SuperHeroDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
+    }
+
+    @IBAction func openImage(_ sender: Any) {
+        if let image = fotoImageView?.image {
+            let agrume = Agrume(image: (image))
+            agrume.show(from: self)
+        }
     }
 }

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Agrume",
+        "repositoryURL": "https://github.com/JanGorman/Agrume.git",
+        "state": {
+          "branch": null,
+          "revision": "2a8fabe2bfe2182ac4934ec4a097f699a1e841f4",
+          "version": "5.6.11"
+        }
+      },
+      {
         "package": "Cosmos",
         "repositoryURL": "https://github.com/evgenyneu/Cosmos.git",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "2a10bf41da75599a9f8e872dbd44fe0155a2e00c",
           "version": "5.15.8"
+        }
+      },
+      {
+        "package": "SwiftyGif",
+        "repositoryURL": "https://github.com/kirualex/SwiftyGif",
+        "state": {
+          "branch": null,
+          "revision": "420d12cba8338b03993f73a72c1f6b70d5273cf2",
+          "version": "5.3.0"
         }
       }
     ]
