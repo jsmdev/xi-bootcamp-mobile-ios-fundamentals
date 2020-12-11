@@ -10,24 +10,14 @@ import Kingfisher
 
 class MarvelSuperHeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
-
     var marvelSuperHeroes = SuperHeroes()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        tableView?.prefetchDataSource = self
-        applyPublisherFilter()
         title = "MARVEL Universe"
-
-
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search super heroes"
-        navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
+        configureTableView()
+        configureSearchController()
+        applyPublisherFilter()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,8 +27,22 @@ class MarvelSuperHeroesViewController: UIViewController {
         }
     }
 
+    private func configureTableView() {
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.prefetchDataSource = self
+    }
+
+    private func configureSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search super heroes"
+        navigationItem.searchController = searchController
+    }
+
     private func applyPublisherFilter() {
-        marvelSuperHeroes =  SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
+        marvelSuperHeroes = SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.biography.publisher == Publisher.marvel.rawValue
         })
     }
@@ -85,20 +89,9 @@ extension MarvelSuperHeroesViewController: UISearchResultsUpdating {
         marvelSuperHeroes = SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.name.lowercased().contains(text)
         })
+        if marvelSuperHeroes.count <= 0 {
+            applyPublisherFilter()
+        }
         tableView?.reloadData()
-    }
-}
-
-extension MarvelSuperHeroesViewController: UISearchBarDelegate {
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        marvelSuperHeroes =  SuperHeroRepository.shared.superHeroes
-        tableView?.reloadData()
-
-//        searchBar.resignFirstResponder()
-//        searchBar.endEditing(true)
-//        searchController.isActive = false
-//        applyPublisherFilter()
-//        view.setNeedsLayout()
-//        tableView?.reloadData()
     }
 }
