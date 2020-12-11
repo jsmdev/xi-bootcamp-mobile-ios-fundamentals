@@ -33,10 +33,26 @@ class SuperHeroDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
+        setData()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+
+    private func configureViewController() {
         title = superHero?.name
-
         buttonBackgroundView?.layer.cornerRadius = CGFloat(6)
+    }
 
+    private func setData() {
         let fullName = superHero?.biography.fullName.count ?? 0 <= 0 ? superHero?.name : superHero?.biography.fullName
         let publisher = superHero?.biography.publisher
         fullNameLabel?.text = "\(fullName ?? "") (\(publisher ?? ""))"
@@ -77,19 +93,9 @@ class SuperHeroDetailViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
-    }
-
     @IBAction func openImage(_ sender: Any) {
         if let image = fotoImageView?.image {
-            let agrume = Agrume(image: (image))
+            let agrume = Agrume(image: image, dismissal: .withButton(nil))
             agrume.show(from: self)
         }
     }
