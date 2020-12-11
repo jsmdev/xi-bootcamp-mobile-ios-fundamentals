@@ -14,10 +14,10 @@ class DCSuperHeroesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
         configureTableView()
         configureSearchController()
         applyPublisherFilter()
-        title = "DC Universe"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,6 +25,10 @@ class DCSuperHeroesViewController: UIViewController {
            let superHero = sender as? SuperHeroElement {
             destination.superHero = superHero
         }
+    }
+
+    private func configureViewController() {
+        title = "DC Universe"
     }
 
     private func configureTableView() {

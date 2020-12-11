@@ -21,12 +21,9 @@ class AllSuperHeroesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
-        collectionView?.prefetchDataSource = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show all", style: .plain, target: self, action: #selector(showAll))
-        title = "Super Heroes"
+        configureViewController()
+        configureCollectionView()
+        configureSearchController()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,7 +37,28 @@ class AllSuperHeroesViewController: UIViewController {
         superHeroes = SuperHeroRepository.shared.superHeroes
         updateCollectionView()
     }
-    
+
+    private func configureViewController() {
+        title = "Super Heroes"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show all", style: .plain, target: self, action: #selector(showAll))
+    }
+
+    private func configureCollectionView() {
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.prefetchDataSource = self
+    }
+
+    private func configureSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search super heroes..."
+        navigationItem.searchController = searchController
+    }
+
     @objc private func filterBy() {
         let ac = UIAlertController(title: "Filter heroes by...", message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Alignment", style: .default, handler: showAlignmentFilter))
@@ -159,5 +177,18 @@ extension AllSuperHeroesViewController: UICollectionViewDelegate {
 extension AllSuperHeroesViewController: PublisherTableViewDelegate {
     func didSelect(_ publisher: String) {
         filterByPublisher(with: publisher)
+    }
+}
+
+extension AllSuperHeroesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        superHeroes = SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
+            return superHero.name.lowercased().contains(text)
+        })
+        if superHeroes.count <= 0 {
+            superHeroes = SuperHeroRepository.shared.superHeroes
+        }
+        collectionView?.reloadData()
     }
 }
