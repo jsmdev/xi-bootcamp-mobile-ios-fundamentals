@@ -19,6 +19,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper-superheroes-marvel&amp;dc.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-EY-dMv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XI Bootcamp Mobile 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-bg-2zi">
+                                <rect key="frame" x="16" y="104" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Fundamentos iOS -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT4-H7-CoX">
+                                <rect key="frame" x="16" y="133" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="José Sancho" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-fW-fbM">
+                                <rect key="frame" x="16" y="162" width="382" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="w5q-Cc-hhM">
                                 <rect key="frame" x="188.5" y="329.5" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,11 +45,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VMG-bg-2zi" secondAttribute="trailing" constant="16" id="27J-nP-vnX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ccf-fW-fbM" secondAttribute="trailing" constant="16" id="4Uu-mr-gGR"/>
+                            <constraint firstItem="aT4-H7-CoX" firstAttribute="top" secondItem="VMG-bg-2zi" secondAttribute="bottom" constant="8" id="Jo7-xk-Kec"/>
                             <constraint firstItem="dlB-EY-dMv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MMB-1L-m9Z"/>
+                            <constraint firstItem="VMG-bg-2zi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="MUs-J9-kEm"/>
+                            <constraint firstItem="ccf-fW-fbM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OfT-2T-fye"/>
                             <constraint firstItem="dlB-EY-dMv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PJ4-fP-AYs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dlB-EY-dMv" secondAttribute="bottom" id="Sqh-9Y-Laz"/>
                             <constraint firstItem="w5q-Cc-hhM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="cKB-jc-4FG"/>
                             <constraint firstItem="dlB-EY-dMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cWQ-CF-E47"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aT4-H7-CoX" secondAttribute="trailing" constant="16" id="gYL-7m-i0G"/>
+                            <constraint firstItem="aT4-H7-CoX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qW3-k3-IIe"/>
+                            <constraint firstItem="ccf-fW-fbM" firstAttribute="top" secondItem="aT4-H7-CoX" secondAttribute="bottom" constant="8" id="sIV-4c-dbb"/>
+                            <constraint firstItem="VMG-bg-2zi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tNr-15-dmy"/>
                             <constraint firstItem="w5q-Cc-hhM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yuh-Hl-3fM"/>
                         </constraints>
                     </view>

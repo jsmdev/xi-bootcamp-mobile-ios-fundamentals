@@ -19,14 +19,41 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper-superheroes-marvel&amp;dc.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5hL-2w-vkR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XI Bootcamp Mobile 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv5-1E-KVL">
+                                <rect key="frame" x="16" y="104" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Fundamentos iOS -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-gd-9i9">
+                                <rect key="frame" x="16" y="133" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="José Sancho" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJF-nk-FWs">
+                                <rect key="frame" x="16" y="162" width="382" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Q68-gd-9i9" firstAttribute="top" secondItem="gv5-1E-KVL" secondAttribute="bottom" constant="8" id="1yO-f9-HwQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5hL-2w-vkR" secondAttribute="trailing" id="4vN-kb-siZ"/>
+                            <constraint firstItem="gv5-1E-KVL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Dc-db-xxS"/>
                             <constraint firstItem="5hL-2w-vkR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8WV-2e-nhV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pJF-nk-FWs" secondAttribute="trailing" constant="16" id="8w3-iV-BYW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5hL-2w-vkR" secondAttribute="bottom" id="AX7-cf-Nac"/>
+                            <constraint firstItem="gv5-1E-KVL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="GO4-4I-uw0"/>
                             <constraint firstItem="5hL-2w-vkR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LKU-xU-jK4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gv5-1E-KVL" secondAttribute="trailing" constant="16" id="XhG-YA-2Hm"/>
+                            <constraint firstItem="Q68-gd-9i9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lEN-ge-vrw"/>
+                            <constraint firstItem="pJF-nk-FWs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pI7-So-O11"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q68-gd-9i9" secondAttribute="trailing" constant="16" id="wtg-Kx-ntS"/>
+                            <constraint firstItem="pJF-nk-FWs" firstAttribute="top" secondItem="Q68-gd-9i9" secondAttribute="bottom" constant="8" id="yoD-Iu-Vr9"/>
                         </constraints>
                     </view>
                 </viewController>
