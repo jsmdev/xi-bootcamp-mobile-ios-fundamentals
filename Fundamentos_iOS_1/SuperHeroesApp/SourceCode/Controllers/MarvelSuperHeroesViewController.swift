@@ -20,6 +20,14 @@ class MarvelSuperHeroesViewController: UIViewController {
         tableView?.prefetchDataSource = self
         applyPublisherFilter()
         title = "MARVEL Universe"
+
+
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search super heroes"
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,5 +76,29 @@ extension MarvelSuperHeroesViewController: UITableViewDelegate {
             performSegue(withIdentifier: Segues.fromMarvelToDetail,
                          sender: marvelSuperHeroes[indexPath.row])
         }
+    }
+}
+
+extension MarvelSuperHeroesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        marvelSuperHeroes = SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
+            return superHero.name.lowercased().contains(text)
+        })
+        tableView?.reloadData()
+    }
+}
+
+extension MarvelSuperHeroesViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        marvelSuperHeroes =  SuperHeroRepository.shared.superHeroes
+        tableView?.reloadData()
+
+//        searchBar.resignFirstResponder()
+//        searchBar.endEditing(true)
+//        searchController.isActive = false
+//        applyPublisherFilter()
+//        view.setNeedsLayout()
+//        tableView?.reloadData()
     }
 }
