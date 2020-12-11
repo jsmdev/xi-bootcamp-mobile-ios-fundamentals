@@ -14,10 +14,10 @@ class MarvelSuperHeroesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "MARVEL Universe"
         configureTableView()
         configureSearchController()
         applyPublisherFilter()
+        title = "MARVEL Universe"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,7 +37,7 @@ class MarvelSuperHeroesViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search super heroes"
+        searchController.searchBar.placeholder = "Search super heroes..."
         navigationItem.searchController = searchController
     }
 
@@ -76,6 +76,7 @@ extension MarvelSuperHeroesViewController: UITableViewDataSourcePrefetching {
 
 extension MarvelSuperHeroesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row < marvelSuperHeroes.count {
             performSegue(withIdentifier: Segues.fromMarvelToDetail,
                          sender: marvelSuperHeroes[indexPath.row])

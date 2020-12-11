@@ -10,14 +10,12 @@ import Kingfisher
 
 class DCSuperHeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
-
     var dcSuperHeroes = SuperHeroes()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        tableView?.prefetchDataSource = self
+        configureTableView()
+        configureSearchController()
         applyPublisherFilter()
         title = "DC Universe"
     }
@@ -27,6 +25,20 @@ class DCSuperHeroesViewController: UIViewController {
            let superHero = sender as? SuperHeroElement {
             destination.superHero = superHero
         }
+    }
+
+    private func configureTableView() {
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.prefetchDataSource = self
+    }
+
+    private func configureSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search super heroes..."
+        navigationItem.searchController = searchController
     }
 
     private func applyPublisherFilter() {
@@ -68,5 +80,18 @@ extension DCSuperHeroesViewController: UITableViewDelegate {
             performSegue(withIdentifier: Segues.fromDCToDetail,
                          sender: dcSuperHeroes[indexPath.row])
         }
+    }
+}
+
+extension DCSuperHeroesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        dcSuperHeroes = SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
+            return superHero.name.lowercased().contains(text)
+        })
+        if dcSuperHeroes.count <= 0 {
+            applyPublisherFilter()
+        }
+        tableView?.reloadData()
     }
 }
