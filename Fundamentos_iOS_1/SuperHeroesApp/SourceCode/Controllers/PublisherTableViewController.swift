@@ -19,15 +19,9 @@ class PublisherTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     private func loadData() {
-
         let superHeroes = SuperHeroRepository.shared.superHeroes
         for object in superHeroes.enumerated() {
             if let publisher = object.element.biography.publisher {
