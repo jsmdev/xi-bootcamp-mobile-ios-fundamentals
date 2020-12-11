@@ -52,7 +52,6 @@ class AllSuperHeroesViewController: UIViewController {
 
     private func configureSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search super heroes..."
