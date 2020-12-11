@@ -7,38 +7,29 @@
 
 import UIKit
 
-//private enum TabBarIndex: Int {
-//    case dc, marvel
-//}
-
 class SuperHeroesTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
         navigationController?.isNavigationBarHidden = false
-//        if let selectedVC = selectedViewController {
-//            configure(selectedVC, with: TabBarIndex.dc.hashValue)
-//        }
     }
-
-//    private func configure(_ viewController: UIViewController,
-//                           with publisher: Int) {
-//        if let superHeroesVC = viewController as? DCSuperHeroesViewController {
-//            switch publisher {
-//                case TabBarIndex.dc.rawValue:
-//                    superHeroesVC.publisher = .dc
-//                case TabBarIndex.marvel.rawValue:
-//                    superHeroesVC.publisher = .marvel
-//                default:
-//                    break
-//            }
-//        }
-//    }
 }
 
 extension SuperHeroesTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
-//        configure(viewController, with: tabBarController.selectedIndex)
+        if let dcVC = viewController.children.first as? DCSuperHeroesViewController {
+            dcVC.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0),
+                                        at: .top,
+                                        animated: true)
+        } else if let marvelVC = viewController.children.first as? MarvelSuperHeroesViewController {
+            marvelVC.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0),
+                                        at: .top,
+                                        animated: true)
+        } else if let alllVC = viewController.children.first as? AllSuperHeroesViewController {
+            alllVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                                at: .top,
+                                                animated: true)
+        }
     }
 }
