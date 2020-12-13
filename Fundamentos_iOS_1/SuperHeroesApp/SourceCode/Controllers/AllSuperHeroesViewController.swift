@@ -72,6 +72,7 @@ class AllSuperHeroesViewController: UIViewController {
         ac.addAction(UIAlertAction(title: Alignment.good.rawValue.capitalized, style: .default, handler: filterByAlignment))
         ac.addAction(UIAlertAction(title: Alignment.neutral.rawValue.capitalized, style: .default, handler: filterByAlignment))
         ac.addAction(UIAlertAction(title: Alignment.bad.rawValue.capitalized, style: .destructive, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
     }
 
@@ -80,6 +81,7 @@ class AllSuperHeroesViewController: UIViewController {
         ac.addAction(UIAlertAction(title: Gender.female.rawValue.capitalized, style: .default, handler: filterByGender))
         ac.addAction(UIAlertAction(title: Gender.male.rawValue.capitalized, style: .default, handler: filterByGender))
         ac.addAction(UIAlertAction(title: "Undefined", style: .default, handler: filterByGender))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
     }
 
