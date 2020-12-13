@@ -20,9 +20,13 @@ class SuperHeroTableViewCell: UITableViewCell {
     @IBOutlet weak var weightLabel: UILabel?
     @IBOutlet weak var eyeColorLabel: UILabel?
     @IBOutlet weak var hairColorLabel: UILabel?
+    @IBOutlet weak var alignmentBackgroundView: UIView?
+    @IBOutlet weak var alignmentLabel: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        alignmentBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius / 2)
 
         contentBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius)
         contentBackgroundView?.layer.shadowColor = UIColor.gray.cgColor
@@ -57,9 +61,15 @@ class SuperHeroTableViewCell: UITableViewCell {
         weightLabel?.text = nil
         eyeColorLabel?.text = nil
         hairColorLabel?.text = nil
+        alignmentLabel?.text = nil
+        alignmentBackgroundView?.backgroundColor = .clear
     }
 
     func configure(with data: SuperHeroElement) {
+        if let imageURL = URL(string: data.images.lg) {
+            fotoImageView?.kf.setImage(with: imageURL)
+        }
+        
         nameLabel?.text = data.name
         fullNameLabel?.text = data.biography.fullName.count <= 0 ? data.name : data.biography.fullName
         genderLabel?.text = data.appearance.gender.rawValue.count <= 0 ? "-" : data.appearance.gender.rawValue
@@ -68,9 +78,15 @@ class SuperHeroTableViewCell: UITableViewCell {
         weightLabel?.text = data.appearance.weight.last?.count ?? 0 <= 0 ? "-" : data.appearance.weight.last
         eyeColorLabel?.text = data.appearance.eyeColor.count <= 0 ? "-" : data.appearance.eyeColor
         hairColorLabel?.text = data.appearance.hairColor.count <= 0 ? "-" : data.appearance.hairColor
+        alignmentLabel?.text = data.biography.alignment.rawValue.capitalized
 
-        if let imageURL = URL(string: data.images.lg) {
-            fotoImageView?.kf.setImage(with: imageURL)
+        switch data.biography.alignment {
+            case .good:
+                alignmentBackgroundView?.backgroundColor = .systemGreen
+            case .neutral:
+                alignmentBackgroundView?.backgroundColor = .systemBlue  
+            case .bad:
+                alignmentBackgroundView?.backgroundColor = .systemRed
         }
     }
 
