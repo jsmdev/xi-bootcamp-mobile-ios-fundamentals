@@ -19,7 +19,6 @@ class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel?
     @IBOutlet weak var eyeColorLabel: UILabel?
     @IBOutlet weak var hairColorLabel: UILabel?
-    @IBOutlet weak var alignmentLabel: UILabel?
     @IBOutlet weak var appearanceLabel: UILabel!
     @IBOutlet weak var intelligenceRatingView: CosmosView!
     @IBOutlet weak var strengthRatingView: CosmosView!
@@ -28,6 +27,8 @@ class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var powerRatingView: CosmosView!
     @IBOutlet weak var combatRatingView: CosmosView!
     @IBOutlet weak var buttonBackgroundView: UIView!
+    @IBOutlet weak var alignmentBackgroundView: UIView?
+    @IBOutlet weak var alignmentLabel: UILabel?
 
     var superHero: SuperHeroElement?
 
@@ -50,23 +51,34 @@ class SuperHeroDetailViewController: UIViewController {
     private func configureViewController() {
         title = superHero?.name
         buttonBackgroundView?.layer.cornerRadius = CGFloat(6)
+        alignmentBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius / 2)
     }
 
     private func setData() {
+        if let object = superHero, let imageURL = URL(string: object.images.lg) {
+            fotoImageView?.kf.setImage(with: imageURL)
+        }
         let fullName = superHero?.biography.fullName.count ?? 0 <= 0 ? superHero?.name : superHero?.biography.fullName
         let publisher = superHero?.biography.publisher
         fullNameLabel?.text = "\(fullName ?? "") (\(publisher ?? ""))"
-        alignmentLabel?.text = superHero?.biography.alignment.rawValue.capitalized
         genderLabel?.text = superHero?.appearance.gender.rawValue.count ?? 0 <= 0 ? "-" : superHero?.appearance.gender.rawValue
         raceLabel?.text = superHero?.appearance.race?.count ?? 0 <= 0 ? "-" : superHero?.appearance.race
         heightLabel?.text = superHero?.appearance.height.last?.count ?? 0 <= 0 ? "-" : superHero?.appearance.height.last
         weightLabel?.text = superHero?.appearance.weight.last?.count ?? 0 <= 0 ? "-" : superHero?.appearance.weight.last
         eyeColorLabel?.text = superHero?.appearance.eyeColor.count ?? 0 <= 0 ? "-" : superHero?.appearance.eyeColor
         hairColorLabel?.text = superHero?.appearance.hairColor.count ?? 0 <= 0 ? "-" : superHero?.appearance.hairColor
-        if let object = superHero, let imageURL = URL(string: object.images.lg) {
-            fotoImageView?.kf.setImage(with: imageURL)
-        }
 
+        if let alignment = superHero?.biography.alignment {
+            alignmentLabel?.text = alignment.rawValue.capitalized
+            switch alignment {
+                case .good:
+                    alignmentBackgroundView?.backgroundColor = .systemGreen
+                case .neutral:
+                    alignmentBackgroundView?.backgroundColor = .systemBlue
+                case .bad:
+                    alignmentBackgroundView?.backgroundColor = .systemRed
+            }
+        }
         if let intelligenceValue = superHero?.powerstats.intelligence {
             intelligenceRatingView.rating = Double(intelligenceValue) / 10.0
             intelligenceRatingView.text = "(\(intelligenceValue))"
