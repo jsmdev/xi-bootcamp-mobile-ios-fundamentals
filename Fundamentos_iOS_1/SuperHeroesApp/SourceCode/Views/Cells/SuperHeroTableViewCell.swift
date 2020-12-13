@@ -25,25 +25,20 @@ class SuperHeroTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         alignmentBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius / 2)
-
         contentBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius)
         contentBackgroundView?.layer.shadowColor = UIColor.gray.cgColor
         contentBackgroundView?.layer.shadowOffset = CGSize.zero
         contentBackgroundView?.layer.shadowOpacity = Values.cornerRadius
         contentBackgroundView?.layer.shadowRadius = CGFloat(Values.shadowOpacity)
-
         fotoImageView?.layer.cornerRadius = CGFloat(Values.cornerRadius)
         fotoImageView?.layer.shadowColor = UIColor.gray.cgColor
         fotoImageView?.layer.shadowOffset = CGSize.zero
         fotoImageView?.layer.shadowOpacity = Values.cornerRadius
         fotoImageView?.layer.shadowRadius = CGFloat(Values.shadowOpacity)
-
         nameLabel?.layer.cornerRadius = CGFloat(Values.cornerRadius)
         nameLabel?.layer.maskedCorners = [.layerMinXMaxYCorner,
                                           .layerMaxXMaxYCorner]
-
         nameBackgroundView?.layer.cornerRadius = CGFloat(Values.cornerRadius)
         nameBackgroundView?.layer.maskedCorners = [.layerMinXMaxYCorner,
                                                    .layerMaxXMaxYCorner]
@@ -51,7 +46,6 @@ class SuperHeroTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-
         fotoImageView?.image = nil
         nameLabel?.text = nil
         fullNameLabel?.text = nil
@@ -69,7 +63,6 @@ class SuperHeroTableViewCell: UITableViewCell {
         if let imageURL = URL(string: data.images.lg) {
             fotoImageView?.kf.setImage(with: imageURL)
         }
-        
         nameLabel?.text = data.name
         fullNameLabel?.text = data.biography.fullName.count <= 0 ? data.name : data.biography.fullName
         genderLabel?.text = data.appearance.gender.rawValue.count <= 0 ? "-" : data.appearance.gender.rawValue
@@ -79,7 +72,6 @@ class SuperHeroTableViewCell: UITableViewCell {
         eyeColorLabel?.text = data.appearance.eyeColor.count <= 0 ? "-" : data.appearance.eyeColor
         hairColorLabel?.text = data.appearance.hairColor.count <= 0 ? "-" : data.appearance.hairColor
         alignmentLabel?.text = data.biography.alignment.rawValue.capitalized
-
         switch data.biography.alignment {
             case .good:
                 alignmentBackgroundView?.backgroundColor = .systemGreen

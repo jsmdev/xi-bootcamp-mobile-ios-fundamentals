@@ -66,6 +66,24 @@
                                                                 <constraint firstAttribute="height" constant="100" id="cqY-px-oP3"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIN-hT-gQs">
+                                                            <rect key="frame" x="42" y="92" width="16" height="8"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i78-DL-aNJ">
+                                                                    <rect key="frame" x="8" y="4" width="0.0" height="0.0"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="i78-DL-aNJ" firstAttribute="leading" secondItem="yIN-hT-gQs" secondAttribute="leading" constant="8" id="8Gg-4M-Koe"/>
+                                                                <constraint firstAttribute="bottom" secondItem="i78-DL-aNJ" secondAttribute="bottom" constant="4" id="Hm5-Lw-YQp"/>
+                                                                <constraint firstAttribute="trailing" secondItem="i78-DL-aNJ" secondAttribute="trailing" constant="8" id="Tnj-vf-a3a"/>
+                                                                <constraint firstItem="i78-DL-aNJ" firstAttribute="top" secondItem="yIN-hT-gQs" secondAttribute="top" constant="4" id="jMd-F4-qL0"/>
+                                                            </constraints>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="57H-LL-8H2">
                                                             <rect key="frame" x="0.0" y="100" width="100" height="20"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,6 +108,8 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="CaE-t0-EQ9"/>
+                                                        <constraint firstItem="yIN-hT-gQs" firstAttribute="centerX" secondItem="cuu-1a-DCF" secondAttribute="centerX" id="FgA-QW-kfR"/>
+                                                        <constraint firstItem="yIN-hT-gQs" firstAttribute="bottom" secondItem="cuu-1a-DCF" secondAttribute="bottom" id="GiZ-Db-aAI"/>
                                                         <constraint firstItem="Rru-h8-Aqs" firstAttribute="top" secondItem="57H-LL-8H2" secondAttribute="bottom" id="MKF-aI-PuC"/>
                                                         <constraint firstItem="Rru-h8-Aqs" firstAttribute="width" secondItem="57H-LL-8H2" secondAttribute="width" id="SdO-3n-Aqt"/>
                                                         <constraint firstItem="57H-LL-8H2" firstAttribute="top" secondItem="cuu-1a-DCF" secondAttribute="bottom" id="ZxV-oU-edA"/>
@@ -110,6 +130,8 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="alignmentBackgroundView" destination="yIN-hT-gQs" id="mro-Td-O6l"/>
+                                            <outlet property="alignmentLabel" destination="i78-DL-aNJ" id="dYs-HQ-4Ri"/>
                                             <outlet property="fotoImageView" destination="cuu-1a-DCF" id="2qQ-FY-PSi"/>
                                             <outlet property="nameLabel" destination="57H-LL-8H2" id="F5A-Yk-9Ut"/>
                                             <outlet property="publisher" destination="Rru-h8-Aqs" id="1Xr-AF-WOl"/>
@@ -784,7 +806,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zu1-bV-8bQ"/>
+        <segue reference="yyX-Eu-OFf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="moon.circle" catalog="system" width="128" height="121"/>
