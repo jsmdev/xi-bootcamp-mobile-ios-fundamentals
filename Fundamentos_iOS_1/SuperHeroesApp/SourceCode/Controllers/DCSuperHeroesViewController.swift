@@ -17,7 +17,7 @@ class DCSuperHeroesViewController: UIViewController {
         configureViewController()
         configureTableView()
         configureSearchController()
-        applyPublisherFilter()
+        dcSuperHeroes = applyDcFilter()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,6 +29,8 @@ class DCSuperHeroesViewController: UIViewController {
 
     private func configureViewController() {
         title = "DC Universe"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show all", style: .plain, target: self, action: #selector(showAll))
     }
 
     private func configureTableView() {
@@ -45,10 +47,50 @@ class DCSuperHeroesViewController: UIViewController {
         navigationItem.searchController = searchController
     }
 
-    private func applyPublisherFilter() {
-        dcSuperHeroes =  SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
+    private func applyDcFilter() -> SuperHeroes {
+        return SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.biography.publisher == Publisher.dc.rawValue
         })
+    }
+
+    private func updateTableView() {
+        tableView?.reloadData {
+            self.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0),
+                                        at: .top,
+                                        animated: true)
+        }
+    }
+
+    private func filterByAlignment(action: UIAlertAction) {
+        guard let alignmentTitle = action.title else {
+            return
+        }
+        let filteredDcSuperHeroes = applyDcFilter()
+        switch alignmentTitle {
+            case "Super Heroes":
+                dcSuperHeroes = filteredDcSuperHeroes.filter({return $0.biography.alignment == Alignment.good })
+            case "Neutral Heroes":
+                dcSuperHeroes = filteredDcSuperHeroes.filter({return $0.biography.alignment == Alignment.neutral })
+            case "Super Villains":
+                dcSuperHeroes = filteredDcSuperHeroes.filter({return $0.biography.alignment == Alignment.bad })
+            default:
+                break
+        }
+        updateTableView()
+    }
+
+    @objc private func filterBy() {
+        let ac = UIAlertController(title: "Filter by...", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Super Heroes", style: .default, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Neutral Heroes", style: .default, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Super Villains", style: .destructive, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
+    }
+
+    @objc func showAll() {
+        dcSuperHeroes = applyDcFilter()
+        updateTableView()
     }
 }
 
@@ -94,7 +136,7 @@ extension DCSuperHeroesViewController: UISearchResultsUpdating {
             return superHero.name.lowercased().contains(text)
         })
         if dcSuperHeroes.count <= 0 {
-            applyPublisherFilter()
+            applyDcFilter()
         }
         tableView?.reloadData()
     }
