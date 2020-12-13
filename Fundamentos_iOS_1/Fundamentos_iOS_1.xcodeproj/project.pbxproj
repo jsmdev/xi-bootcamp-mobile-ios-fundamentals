@@ -21,6 +21,7 @@
 		903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */; };
 		903F03D4257E1D2C00DA7A6B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */; };
 		909BDC3E2581222F00F61A99 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 909BDC3D2581222F00F61A99 /* Cosmos */; };
+		909F96BE25866E8700231784 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909F96BD25866E8700231784 /* UITableView+Extensions.swift */; };
 		90A239ED257E0486000DB167 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239EC257E0486000DB167 /* Constants.swift */; };
 		90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */; };
 		90B4512025823E9000131027 /* PublisherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4511F25823E9000131027 /* PublisherTableViewController.swift */; };
@@ -50,6 +51,7 @@
 		901ED1C225800A4B00E5F6A8 /* SuperHeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		903F03D0257E143000DA7A6B /* SuperHeroesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesTabBarController.swift; sourceTree = "<group>"; };
 		903F03D3257E1D2C00DA7A6B /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		909F96BD25866E8700231784 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		90A239EC257E0486000DB167 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		90A239F8257E10CA000DB167 /* DCSuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		90B4511F25823E9000131027 /* PublisherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherTableViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				90B451232582458C00131027 /* UICollectionView+Extensions.swift */,
+				909F96BD25866E8700231784 /* UITableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				90B4512025823E9000131027 /* PublisherTableViewController.swift in Sources */,
 				90BFFFBC257E85740085F98F /* MarvelSuperHeroesViewController.swift in Sources */,
 				90B451242582458C00131027 /* UICollectionView+Extensions.swift in Sources */,
+				909F96BE25866E8700231784 /* UITableView+Extensions.swift in Sources */,
 				903F03D1257E143000DA7A6B /* SuperHeroesTabBarController.swift in Sources */,
 				90BFFFB3257E457F0085F98F /* SuperHeroRepository.swift in Sources */,
 				90A239F9257E10CA000DB167 /* DCSuperHeroesViewController.swift in Sources */,

@@ -17,7 +17,7 @@ class MarvelSuperHeroesViewController: UIViewController {
         configureViewController()
         configureTableView()
         configureSearchController()
-        applyPublisherFilter()
+        marvelSuperHeroes = applyMarvelFilter()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,6 +29,8 @@ class MarvelSuperHeroesViewController: UIViewController {
 
     private func configureViewController() {
         title = "MARVEL Universe"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter by", style: .plain, target: self, action: #selector(filterBy))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show all", style: .plain, target: self, action: #selector(showAll))
     }
 
     private func configureTableView() {
@@ -45,10 +47,50 @@ class MarvelSuperHeroesViewController: UIViewController {
         navigationItem.searchController = searchController
     }
 
-    private func applyPublisherFilter() {
-        marvelSuperHeroes = SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
+    private func applyMarvelFilter() -> SuperHeroes {
+        return SuperHeroRepository.shared.superHeroes.filter({ (superHero) -> Bool in
             return superHero.biography.publisher == Publisher.marvel.rawValue
         })
+    }
+
+    private func updateTableView() {
+        tableView?.reloadData {
+            self.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0),
+                                        at: .top,
+                                        animated: true)
+        }
+    }
+
+    private func filterByAlignment(action: UIAlertAction) {
+        guard let alignmentTitle = action.title else {
+            return
+        }
+        let filteredMarvelSuperHeroes = applyMarvelFilter()
+        switch alignmentTitle {
+            case "Super Heroes":
+                marvelSuperHeroes = filteredMarvelSuperHeroes.filter({return $0.biography.alignment == Alignment.good })
+            case "Neutral Heroes":
+                marvelSuperHeroes = filteredMarvelSuperHeroes.filter({return $0.biography.alignment == Alignment.neutral })
+            case "Super Villains":
+                marvelSuperHeroes = filteredMarvelSuperHeroes.filter({return $0.biography.alignment == Alignment.bad })
+            default:
+                break
+        }
+        updateTableView()
+    }
+
+    @objc private func filterBy() {
+        let ac = UIAlertController(title: "Filter by...", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Super Heroes", style: .default, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Neutral Heroes", style: .default, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Super Villains", style: .destructive, handler: filterByAlignment))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
+    }
+
+    @objc func showAll() {
+        marvelSuperHeroes = applyMarvelFilter()
+        updateTableView()
     }
 }
 
@@ -95,7 +137,7 @@ extension MarvelSuperHeroesViewController: UISearchResultsUpdating {
             return superHero.name.lowercased().contains(text)
         })
         if marvelSuperHeroes.count <= 0 {
-            applyPublisherFilter()
+            marvelSuperHeroes = applyMarvelFilter()
         }
         tableView?.reloadData()
     }
