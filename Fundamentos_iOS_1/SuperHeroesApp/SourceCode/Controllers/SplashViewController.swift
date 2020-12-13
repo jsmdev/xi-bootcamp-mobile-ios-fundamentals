@@ -14,7 +14,7 @@ class SplashViewController: UIViewController {
     }
 
     func addAsyncDelay() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
             self?.nextViewController()
         }
     }
