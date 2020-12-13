@@ -416,14 +416,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aK-Yg-Vok">
-                                <rect key="frame" x="374" y="96" width="32" height="32"/>
+                                <rect key="frame" x="362" y="96" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV6-gw-wMh" userLabel="View Image Button">
-                                <rect key="frame" x="374" y="96" width="32" height="32"/>
+                                <rect key="frame" x="362" y="96" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="pAq-ek-fXb"/>
-                                    <constraint firstAttribute="width" constant="32" id="ppb-cX-BWz"/>
+                                    <constraint firstAttribute="height" constant="44" id="pAq-ek-fXb"/>
+                                    <constraint firstAttribute="width" constant="44" id="ppb-cX-BWz"/>
                                 </constraints>
                                 <state key="normal" image="play.rectangle.fill" catalog="system"/>
                                 <connections>
